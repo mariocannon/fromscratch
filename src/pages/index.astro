@@ -1,16 +1,58 @@
 ---
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ReviewCard from '../components/ReviewCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html>
+  <head>
+    <title>Home Service Business</title>
+    <link rel="stylesheet" href="/styles/global.css">
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <img src="/images/hero.jpg" alt="Hero Image" />
+        <div class="hero-text">
+          <h1>Reliable Home Services You Can Trust</h1>
+          <p>We offer a wide range of services to keep your home in top shape.</p>
+          <a href="#services" class="btn-primary">Explore Our Services</a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+          <ServiceCard title="Plumbing" description="Fixing leaks, repairs, and installations." icon="/images/plumbing.png" />
+          <ServiceCard title="Electrical" description="Licensed electricians for any issue." icon="/images/electrical.png" />
+          <ServiceCard title="Landscaping" description="Professional lawn care and landscaping." icon="/images/landscaping.png" />
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+      <section id="reviews" class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-grid">
+          <ReviewCard customer="John Doe" feedback="Fast and reliable service. My go-to for all home repairs!" />
+          <ReviewCard customer="Jane Smith" feedback="Excellent customer service and attention to detail." />
+          <ReviewCard customer="Mary Johnson" feedback="Highly recommend for any home service needs." />
+        </div>
+      </section>
+      
+
+      <!-- Call to Action -->
+      <section id="contact" class="cta">
+        <h2>Need Help with Your Home?</h2>
+        <p>Contact us today to schedule a service.</p>
+        <a href="mailto:info@homeservice.com" class="btn-primary">Get in Touch</a>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>

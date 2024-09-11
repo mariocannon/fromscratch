@@ -1,0 +1,8 @@
+---
+const { customer, feedback } = Astro.props;
+---
+
+<div class="review-card">
+  <blockquote>{feedback}</blockquote>
+  <p>- {customer}</p>
+</div>
